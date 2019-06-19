@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_helloworld/layoutTest.dart';
 import 'package:flutter_helloworld/listView.dart';
-import 'package:flutter_helloworld/test.dart';
+import 'package:flutter_helloworld/secondRoute.dart';
 import 'package:flutter_helloworld/toe.dart';
+import 'package:flutter_helloworld/views/CounterModel.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  final counter = CounterModel();
+  final textSize = 48;
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider.value(value: textSize),
+        ChangeNotifierProvider.value(value: counter)
+      ],
+      child: MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -13,12 +27,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // home: MainRoute(),
       //注册路由表
-      initialRoute: 'toe_page',
+      initialRoute: '/',
       routes: {
         "/": (context) => MainRoute(),
         "second_page": (context) => SecondRoute(),
         "layout_page": (context) => LayoutTest(),
-        "toe_page": (context) =>Toe()
+        "toe_page": (context) => Toe()
       },
     );
   }
@@ -33,7 +47,6 @@ class MainRoute extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          Text("第一个页面"),
           RaisedButton(
             onPressed: () async {
               //导航到新路由

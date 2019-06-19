@@ -9,17 +9,27 @@
 	6. vscode安装flutter插件
 	7. ctrl+3打开命令面板new flutter Project
 	8. 创建成功+命令行执行flutter run
+			flutter run （默认为debug环境）
+			flutter run --release (以release模式运行)
 
 使用外部包
 	编辑pubspec.yaml,vscode的dart和flutter插件会自动扫描安装三方包
-	(相当于运行flutter pub get?)
+	(相当于运行flutter package get)
+
+	版本可以先用any
+	any会自动调用pub的版本分析器，寻找合适的能够避免冲突的依赖版本并下载
+	使用pubspec.lock找到正确的版本,并更正pubspec.yaml文件的版本号
 
 添加一个有状态的部件
 	StatelessWidget和StatefulWidget
 
 	实现一个StatefulWidget至少需要两个类
 	1. StatefulWidget类
+			@override  State<StatefulWidget> createState()=>{return State类}
 	2. State类
+		@override	Widget build(BuildContext context)
+		@override void dispose()=> super.dispose()
+		@override void initState()=> super.initState()
 	
 	在Flutter的响应式风格的框架中，
 	调用setState() 会为State对象触发build()方法，从而导致对UI的更新

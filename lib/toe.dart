@@ -17,7 +17,7 @@ class Toe extends StatelessWidget {
   getBlock() {
     final _a = <Widget>[];
     for (var i = 0; i < 10; i++) {
-      _a.add(Text(i.toStringAsFixed(10)));
+      _a.add(Text(i.toString()));
     }
     return _a;
   }

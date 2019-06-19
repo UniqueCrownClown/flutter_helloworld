@@ -1,0 +1,19 @@
+mixin的使用
+  要使用mixin的话，你需要使用with关键字，后跟一个或多个mixin的名称
+
+路由管理(Navigator,MaterialPageRoute,PageRouteBuilder)
+
+Future都是Dart:async库的核心API，对异步提供了非常好的支持。
+  async(函数名参数后函数体花括号前)+await
+Stream
+
+BLoC
+
+provider
+
+还不支持code Push(热更新)
+
+三方包
+Dio(http请求)
+json_annotation(json序列化和反序列化用的)
+fish_redux(咸鱼的状态管理包)

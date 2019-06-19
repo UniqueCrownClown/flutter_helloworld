@@ -1,0 +1,86 @@
+dart语法
+
+	强类型，动态，可推断
+	dart的所有东西都是对象，包括数字，函数等
+	都继承Object，默认为null(包括数字)
+	a. 数值类
+		var a= 10;
+		const b = 20;(编译时常量)
+		final c= Math.random()*10;(是个常量)
+		数值型
+		num ==> int和double
+		```
+		int i = 10;
+		print(i.isOdd);
+		print(i.isEven);
+		print(i.toDouble());
+		// abs()、round()、floorl()、ceil()、toInt()、toDouble()
+		//num==》string
+		var one = int.parse('1');
+		String oneAsString = 1.toString();
+		String piAsString = 3.14159.toStringAsFixed(2); 
+		```
+  b. 字符类
+		字符串拼接方式
+		1. + 拼接
+		2. 空格拼接(换行符也识别在内)
+		3. 支持${flag}的字符串变量写法
+  c. 布尔值类
+		assert 是语言内置的断言函数，仅在检查模式下有效
+		在开发过程中， 除非条件为真，否则会引发异常。
+		(断言失败则程序立刻终止)。
+		检查模式?
+		```
+		var fullName = '';
+		assert(fullName.isEmpty)
+
+		var hitPoints = 0;
+		assert(hitPoints <= 0);
+		```
+
+	d. List列表
+			常规function:
+			add(value),
+			insert(index,value),
+			remove(value),
+			removeAt(index),
+			list.indexOf(element),
+			```
+			var list = new List();
+			List intList= [1,2,3];
+			List const = const[10,7,23]
+			```
+	e. map集合
+			attribute: length,isEmpty,isNotEmpty,keys,values
+			function: map.containsKey(String)
+								map.containsValue(String)
+								map.forEach((key,value)=>doSomething(key,value))
+			```
+			var language ={'first':dart,'second':'java'};
+			var initLanuage = new Map();
+			```
+	f. dynamic 关键字
+			动态数据类型
+			```
+			dynamic d = 10;
+			d = 'dart';
+			```
+	g. function规则
+			1. ?? 、??= 属于操作符，如: AA ?? "999" 表示如果 AA 为空，返回999；AA ??= "999" 表示如果 AA 为空，给 AA 设置成 999
+			2. 参数默认值
+				getDetail(Sting userName, reposName, {branch = "master"}){}
+
+	 Tip:插件快捷键stl和stf
+
+
+
+
+
+
+
+
+
+
+
+
+	
